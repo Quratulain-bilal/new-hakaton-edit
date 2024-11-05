@@ -1,0 +1,482 @@
+/* General Styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+}
+
+/* Card Styles */
+.card {
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  width: 55%;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/* Header Styles */
+.card-header {
+  background: linear-gradient(90deg, #000000, #434343);
+  color: #fff;
+  padding: 50px;
+  border-radius: 12px 12px 0 0;
+  text-align: center;
+  animation: slideInTop 0.5s ease forwards;
+}
+
+.dddd {
+  background: linear-gradient(90deg, #000000, #434343);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px 0;
+  width: 20%;
+  transition: transform 0.3s, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  animation: float 3s ease-in-out infinite, gradientShift 3s ease infinite;
+}
+
+.dddd:hover {
+  background-color: #434343;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.dddd:active {
+  animation: pulse 0.3s;
+  background: linear-gradient(90deg, #4e4e4e, #3e3e3e);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Button Styles */
+.btn {
+  background: linear-gradient(90deg, #000000, #434343);
+  color: white !important;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px 0;
+  width: 100%;
+  transition: transform 0.3s, background-color 0.3s ease;
+  font-size: 1.1em;
+  text-align: center;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: #434343;
+  transform: scale(1.05);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+/* Container and Row Layout */
+.container {
+  padding: 20px;
+  animation: slideInBottom 0.5s ease 0.2s forwards;
+}
+
+.container .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Input and Resume Section */
+.input,
+.resume-section {
+  padding: 15px;
+  background-color: #faf8fc;
+  border: 1px solid #d1c4e9;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.input:hover,
+.resume-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* Button Styles */
+.btn,
+.generate-cv-btn {
+  background: linear-gradient(90deg, #000000, #434343);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px 0;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 1.1em;
+}
+
+.generate-cv-btn {
+  padding: 2px 3px;
+}
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 500px) {
+  .card {
+    width: 300%; /* Increase width for smaller screens */
+    padding: 15px; /* Reduce padding for compact layout */
+  }
+  
+  .card-header {
+    padding: 30px; /* Reduced padding for header */
+  }
+  
+  h1 {
+    font-size: 1.6em; /* Slightly smaller font size */
+  }
+  
+  .btn, .dddd, .generate-cv-btn {
+    font-size: 1em; /* Reduced font size */
+    padding: 10px 15px; /* Adjusted padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 75%; /* Full width for very small screens */
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .btn, .dddd, .generate-cv-btn {
+    font-size: 0.9em;
+    padding: 8px 10px;
+  }
+
+  h1 {
+    font-size: 1.4em; /* Smaller font size for tiny screens */
+  }
+
+  .container .row {
+    grid-template-columns: 1fr; /* Single column for smallest screens */
+  }
+}
+
+/* Print Styling */
+@media print {
+  .btn,
+  .generate-cv-btn {
+    display: none;
+  }
+}
+
+/*cssssssssssssssssss*/
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: #f0f4f8;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Profile section styling with royal theme */
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #000000, #434343);
+  color: #f0f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile h2 {
+  color: #e6e6fa;
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Profile image styling */
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin-right: 20px; /* Adjusted margin for better spacing */
+  object-fit: cover;
+}
+
+/* Responsive adjustments for profile image and profile section */
+@media (max-width: 1000px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .profile h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 10px;
+  }
+
+  .profile h2 {
+    font-size: 1.25rem;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Additional responsive adjustments for extra-small screens (mobile) */
+@media (max-width: 420px) {
+  .profile {
+    padding: 8px;
+  }
+
+  .profile h2 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .profile-image {
+    width: 90px;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+/* Profile info styling */
+.profile-info {
+  flex: 1;
+}
+
+/* Resume container styling */
+.resume-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Sections styling */
+.contact-section,
+.professional-section {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section {
+  width: 25%;
+  background: linear-gradient(90deg, #000000, #434343);
+}
+
+.contact-section h2 {
+  color: whitesmoke;
+}
+
+.professional-section {
+  width: 70%;
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+  }
+
+  .contact-section,
+  .professional-section {
+    width: 90%; /* Adjusted width for better layout */
+    margin-bottom: 20px;
+  }
+}
+
+/* Skill bars styling */
+.skill-bar {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  margin: 10px 0;
+}
+
+.skill-fill {
+  height: 20px;
+  border-radius: 25px;
+  transition: width 0.3s ease;
+}
+
+/* Heading styling */
+h2 {
+  color: #333;
+  border-bottom: 2px solid #434343;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Info box styling */
+.info-box {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+/* Button container styling */
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #000000, #434343);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: black;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
+
+/* Icons styling */
+.icon {
+  margin-right: 8px;
+}
+
+/* Print-specific adjustments */
+@media print {
+  .button-container,
+  .btn {
+    display: none;
+  }
+
+  .profile {
+    flex-direction: row;
+    width: 94%;
+    color: black; /* Fallback color for print */
+    background-color: transparent;
+    page-break-inside: avoid;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+  }
+
+  .profile-info {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .contact-section,
+  .professional-section {
+    background-color: #ffffff; /* Ensure backgrounds are white for printing */
+    color: black; /* Fallback text color for print */
+  }
+}
